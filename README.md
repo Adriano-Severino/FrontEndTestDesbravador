@@ -1,6 +1,20 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Run npm install in the terminal in the application directory to install the project's dependencies
+#npm install
+
+then go to the provider folder to change the url of your local host that is running the back end api
+
+<p align="left">
+  <img src="https://prnt.sc/hDPr_U4p2ZoM" width="350" alt="accessibility text">
+</p>
+
+To run the project, run npm run dev to start the application
+#npm run dev
+
+In this link you will find the back end API repository and how to use it
+https://github.com/Adriano-Severino/TestDesbravador
+
 
 Currently, two official plugins are available:
 
