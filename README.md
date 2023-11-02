@@ -16,6 +16,11 @@ To run the project, run npm run dev to start the application
 In this link you will find the back end API repository and how to use it
 https://github.com/Adriano-Severino/TestDesbravador
 
+To be able to log into the system, use the user registered by default with admin permission, 1 admin user will already be created to log into the system 
+# Email: admin@admin.com 
+# password: 123
+
+
 
 Currently, two official plugins are available:
 
