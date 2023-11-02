@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import './css/project.css';
 import { useHooksProject } from '../hooks/useHooksProject';
-import { ProjectRiskEnum, StatusProjectEnum } from '../Models/CreateProjectModel';
 import { useNavigate } from 'react-router-dom';
 import { ServiceProject } from '../Services/ServiceProject';
 import { ProjectModels } from '../Models/ProjectModels';
+import { ProjectRiskEnum } from '../Models/ProjectRiskEnum';
+import { StatusProjectEnum } from '../Models/StatusProjectEnum';
 
 const ProjectPage: React.FC = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const ProjectPage: React.FC = () => {
 
   useEffect(() => {
     GetAllProject();
-  }, [GetAllProject]);
+  }, [GetAllProject, projects]);
 
   return (
     <div className='container'>
@@ -45,8 +46,8 @@ const ProjectPage: React.FC = () => {
             </td>
               <td>
                 <div className='buttonContainer'>
-                  <button className='botaoEditar' onClick={() => navigate(`/edit-projects/${projects.id}`)}>Editar</button>
-                  <button className='BotaoDeletar' onClick={() => { if (window.confirm('Tem certeza que deseja deletar este item?')) { ServiceProject.DeleteProject(projects.id) }; }}>Deletar</button>
+                  <button className='botaoEditar' onClick={() => navigate(`/edit-projects/${project.id}`)}>Editar</button>
+                  <button className='BotaoDeletar' onClick={() => { if (window.confirm('Tem certeza que deseja deletar este item?')) { ServiceProject.DeleteProject(project.id) }; }}>Deletar</button>
                 </div>
               </td>
 

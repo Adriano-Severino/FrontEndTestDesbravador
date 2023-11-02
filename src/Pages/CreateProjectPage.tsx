@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useHooksProject } from '../hooks/useHooksProject';
-import { CreateProjectModel, ProjectRiskEnum } from '../Models/CreateProjectModel';
 import { useNavigate } from 'react-router-dom';
 import './css/create.css';
+import { ProjectRiskEnum } from '../Models/ProjectRiskEnum';
+import { CreateProjectModel } from '../Models/CreateProjectModel';
 
 
 const CreateProjectPage: React.FC = () => {

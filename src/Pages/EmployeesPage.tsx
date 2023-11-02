@@ -10,7 +10,7 @@ const EmployeesPage: React.FC = () => {
 
   useEffect(() => {
     GetAllEmployees();
-  }, [GetAllEmployees]);
+  }, [GetAllEmployees,tasks]);
 
   return (
     <div className='container'>
@@ -35,7 +35,7 @@ const EmployeesPage: React.FC = () => {
               <td>
                 <div className='buttonContainer'>
                   <button className='botaoEditar' onClick={() => navigate(`/edit-employees/${task.id}`)}>Editar</button>
-                  <button className='BotaoDeletar' onClick={() => { if (window.confirm('Tem certeza que deseja deletar este item?')) { EmployeesService.DeleteEmployees(task.id) }; }}>Deletar</button>
+                  <button className='BotaoDeletar' onClick={() => { if (window.confirm('Tem certeza que deseja deletar este item?')) { EmployeesService.DeleteEmployees(task.id) };}}>Deletar</button>
                 </div>
               </td>
             </tr>

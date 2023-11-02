@@ -1,16 +1,6 @@
-export enum ProjectRiskEnum {
-  'Baixo risco' = 0,
-  'Médio risco' = 1,
-  'Alto risco' = 2,
-}
+import { ProjectRiskEnum } from "./ProjectRiskEnum";
 
-export enum StatusProjectEnum {
-  'Em análise' = 0,
-  'Análise realizada' = 1,
-  'Análise aprovada' = 2,
-}
-
-  export interface CreateProjectModel {
+export interface CreateProjectModel {
     ProjectName: string;
     ProjectDescription: string;
     ProjectRiskEnum: ProjectRiskEnum;
