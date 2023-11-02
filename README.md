@@ -6,7 +6,7 @@ Run npm install in the terminal in the application directory to install the proj
 then go to the provider folder to change the url of your local host that is running the back end api
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/Adriano-Severino/FrontEndTestDesbravador/master/configuracao1.png?token=GHSAT0AAAAAACIVFHFN42OZEB3TBXF4AEQ4ZKEESJA" alt="accessibility text">
+  <img src="https://github.com/Adriano-Severino/FrontEndTestDesbravador/blob/master/configuracao1.png" alt="accessibility text">
 </p>
 
 
