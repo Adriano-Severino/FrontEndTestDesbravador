@@ -1,0 +1,52 @@
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, select {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  
+.buttonEditar:hover {
+  background-color: #6f00ff; /* ciano */
+}
+
+.buttonEditar button {
+  padding: 10px;
+  background-color: #080101; /* cinza escuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px; /* define a largura do botão */
+  margin-bottom: 10px; /* adiciona espaço entre os botões */
+  transition: background-color 0.3s; /* adiciona transição suave ao mudar a cor de fundo */
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgb(14, 3, 31); /* Verde */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s; /* Adiciona transição suave ao mudar a cor de fundo */
+  cursor: pointer; /* Muda o cursor para um ponteiro quando você passa o mouse sobre o botão */
+  border-radius: 5px; /* Arredonda os cantos do botão */
+}
+
+.buttonVoltar {
+  width: 100%; /* Faz com que o botão ocupe toda a largura do seu contêiner */
+  margin: 10px;
+}

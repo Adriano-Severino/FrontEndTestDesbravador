@@ -34,16 +34,7 @@ const App: React.FC = () => {
           </button>
         </div>
 
-        <div>
-          <button className="buttonCriar" type="submit" onClick={() => navigate('/edit-projects')}>
-            Editar Projectos
-          </button>
-        </div>
-        <div>
-          <button className="buttonCriar" type="submit" onClick={() => navigate('/edit-employees')}>
-            Editar Funcionarios
-          </button>
-        </div>
+     
         <div>
           <button className="buttonCriar" type="submit" onClick={() => navigate('/save-public-employees')}>
             Salvar Funcionarios da api public

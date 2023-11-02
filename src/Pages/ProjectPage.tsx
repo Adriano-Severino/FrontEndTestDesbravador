@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import './css/project.css';
 import { useHooksProject } from '../hooks/useHooksProject';
-import { ProjectRiskEnum } from '../Models/CreateProjectModel';
+import { ProjectRiskEnum, StatusProjectEnum } from '../Models/CreateProjectModel';
 import { useNavigate } from 'react-router-dom';
+import { ServiceProject } from '../Services/ServiceProject';
+import { ProjectModels } from '../Models/ProjectModels';
 
 const ProjectPage: React.FC = () => {
   const navigate = useNavigate();
-  const { tasks, GetAll } = useHooksProject();
+  const { projects, GetAllProject } = useHooksProject();
 
   useEffect(() => {
-    GetAll();
-  }, [GetAll]);
+    GetAllProject();
+  }, [GetAllProject]);
 
   return (
     <div className='container'>
@@ -22,26 +24,43 @@ const ProjectPage: React.FC = () => {
             <th>Data de Início</th>
             <th>Data de Término</th>
             <th>Risco do Projeto</th>
+            <th>Estatus do Projeto</th>
+            <th>Funcionários</th>
+            <th>Editar e Deletar</th>
           </tr>
         </thead>
         <tbody>
-          {tasks.map((task) => (
-            <tr key={task.id}>
-              <td>{task.projectName}</td>
-              <td>{task.projectDescription}</td>
-              <td>{new Date(task.startDate).toLocaleDateString()}</td>
-              <td>{task.endDate ? new Date(task.endDate).toLocaleDateString() : 'Indeterminado'}</td>
-              <td>{ProjectRiskEnum[task.projectRiskEnum]}</td>
+        {projects.map((project: ProjectModels) => (
+          <tr key={project.id}>
+            <td>{project.projectName}</td>
+            <td>{project.projectDescription}</td>
+            <td>{new Date(project.startDate).toLocaleDateString()}</td>
+            <td>{project.endDate ? new Date(project.endDate).toLocaleDateString() : 'Indeterminado'}</td>
+            <td>{ProjectRiskEnum[project.projectRiskEnum]}</td>
+            <td>{StatusProjectEnum[project.statusProjectEnum]}</td>
+            <td> {/* Adicione uma célula para os funcionários */}
+              {project.employees.map((employee) => (
+                <div key={employee.id}>{employee.nome}</div>
+              ))}
+            </td>
+              <td>
+                <div className='buttonContainer'>
+                  <button className='botaoEditar' onClick={() => navigate(`/edit-projects/${projects.id}`)}>Editar</button>
+                  <button className='BotaoDeletar' onClick={() => { if (window.confirm('Tem certeza que deseja deletar este item?')) { ServiceProject.DeleteProject(projects.id) }; }}>Deletar</button>
+                </div>
+              </td>
+
             </tr>
           ))}
+
         </tbody>
       </table>
       <div>
-      <button className="buttonCriar" type="submit" onClick={() => navigate('/')}>
-        Voltar
-      </button>
+        <button className="buttonCriar" type="submit" onClick={() => navigate('/')}>
+          Voltar
+        </button>
+      </div>
     </div>
-    </div>  
   );
 };
 

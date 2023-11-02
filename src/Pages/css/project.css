@@ -26,3 +26,30 @@
     color: white;
   }
   
+.buttonCriar {
+  padding: 10px;
+  background-color: #080101; /* cinza escuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 400px; /* define a largura do botão */
+  margin-bottom: 10px; /* adiciona espaço entre os botões */
+  transition: background-color 0.3s; /* adiciona transição suave ao mudar a cor de fundo */
+}
+
+.BotaoDeletar{
+  background-color: #810404; /* cinza escuro */
+  width: 100%; /* Faz com que o botão ocupe toda a largura do seu contêiner */
+  margin: 5px;
+}
+
+.botaoEditar{
+  width: 100%; /* Faz com que o botão ocupe toda a largura do seu contêiner */
+  margin: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between; /* Adiciona espaço igual entre os botões */
+}

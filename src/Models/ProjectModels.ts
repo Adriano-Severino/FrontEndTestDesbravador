@@ -1,3 +1,5 @@
+import { EmployeesModelsList } from "./EmployeesModels"
+
 export type ProjectModelsList = ProjectModels[]
 
 export interface ProjectModels {
@@ -7,6 +9,6 @@ export interface ProjectModels {
   endDate: any
   projectRiskEnum: number
   statusProjectEnum: number
-  employees: any[]
+  employees: EmployeesModelsList
   id: string
 }

@@ -7,8 +7,8 @@ import { UpdateEmployeesModel } from '../Models/UpdateEmployeesModel';
 export const useHooksEmployees = () =>{
     const [tasks,setTasks] = useState<EmployeesModelsList>([]);
 
-    const GetAll = useCallback(async () => {
-   const { status, data } = await EmployeesService.GetAll();
+    const GetAllEmployees = useCallback(async () => {
+   const { status, data } = await EmployeesService.GetAllEmployees();
 
    if (status != 200) throw new Error();
    
@@ -25,10 +25,22 @@ export const useHooksEmployees = () =>{
         if (status != 200) throw new Error();
     },[])
 
+    const [employees, setEmployees] = useState<UpdateEmployeesModel | null>(null);
+
+    const GetEmployeeById = useCallback(async (id: string) => {
+        const { status, data } = await EmployeesService.GetEmployeesById(id);
+
+        if (status !== 200) throw new Error();
+
+        setEmployees(data);
+    }, []);
+    
     return{
         tasks,
-        GetAll,
+        employees,
+        GetAllEmployees,
         CreateEmployees,
         UpdateEmployees,
+        GetEmployeeById,
     };
 };
