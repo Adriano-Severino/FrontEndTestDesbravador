@@ -1,5 +1,6 @@
 import { CreateEmployeesModels } from "../Models/CreateEmployeesModels";
 import { EmployeesModelsList } from "../Models/EmployeesModels";
+import { LoginModel } from "../Models/LoginModel";
 import { UpdateEmployeesModel } from "../Models/UpdateEmployeesModel";
 import { API } from "../Providers"
 
@@ -9,6 +10,7 @@ const UpdateEmployees = (updateEmployees: UpdateEmployeesModel) => API.put<Updat
 const DeleteEmployees = (id: string) => API.delete(`api/v1/Employees/${id}`);
 const GetEmployeesById = (id: string) => API.get<UpdateEmployeesModel>(`api/v1/Employees/${id}`);
 const SavePublicemployees = () => API.get(`api/v1/Employees/get-employees-api`);
+const Login = (Login: LoginModel) => API.post(`api/v1/Employees/login`, Login);
 
 export const EmployeesService = {
     GetAllEmployees,
@@ -16,5 +18,6 @@ export const EmployeesService = {
     UpdateEmployees,
     DeleteEmployees,
     GetEmployeesById,
-    SavePublicemployees
+    SavePublicemployees,
+    Login
 }
