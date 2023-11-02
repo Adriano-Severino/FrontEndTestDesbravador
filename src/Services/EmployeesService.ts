@@ -8,11 +8,13 @@ const CreateEmployees = (createEmployees: CreateEmployeesModels) => API.post<Cre
 const UpdateEmployees = (updateEmployees: UpdateEmployeesModel) => API.put<UpdateEmployeesModel>('api/v1/Employees/update', updateEmployees);
 const DeleteEmployees = (id: string) => API.delete(`api/v1/Employees/${id}`);
 const GetEmployeesById = (id: string) => API.get<UpdateEmployeesModel>(`api/v1/Employees/${id}`);
+const SavePublicemployees = () => API.get(`api/v1/Employees/get-employees-api`);
 
 export const EmployeesService = {
     GetAllEmployees,
     CreateEmployees,
     UpdateEmployees,
     DeleteEmployees,
-    GetEmployeesById
+    GetEmployeesById,
+    SavePublicemployees
 }
