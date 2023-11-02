@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+
+.containerInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerInput input,
+.containerInput select {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.buttonCriar {
+  padding: 10px;
+  background-color: #080101; /* cinza escuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 400px; /* define a largura do botão */
+  margin-bottom: 10px; /* adiciona espaço entre os botões */
+  transition: background-color 0.3s; /* adiciona transição suave ao mudar a cor de fundo */
+}
+
+.buttonCriar:hover {
+  background-color: #6f00ff; /* ciano */
+}
