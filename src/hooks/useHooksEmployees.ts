@@ -39,7 +39,6 @@ export const useHooksEmployees = () => {
 
     const [loginResult, setLogin] = useState<LoginModel | null>(null);
 
-    // Certifique-se de que a função Login retorna um Promise<ResponseLogin>
     const Login = async (loginData: LoginModel): Promise<ResponseLogin> => {
         const { status, data } = await EmployeesService.Login(loginData);
 
