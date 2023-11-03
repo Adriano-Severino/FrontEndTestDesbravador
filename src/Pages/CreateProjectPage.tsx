@@ -76,7 +76,7 @@ const CreateProjectPage: React.FC = () => {
           </button>
         </div>
         <div>
-          <button className="buttonCriar" type="submit" onClick={() => navigate('/')}>
+          <button className="buttonCriar" type="submit" onClick={() => navigate('/home')}>
             Voltar
           </button>
         </div>

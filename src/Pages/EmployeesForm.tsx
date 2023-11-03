@@ -14,6 +14,7 @@ const EmployeesForm: React.FC<EmployeesFormProps> = ({ initialValues, onSubmit }
     const navigate = useNavigate();
     const [values, setValues] = useState<UpdateEmployeesModel>(initialValues);
     const [message, setMessage] = useState<string | null>(null);
+    const [submitted, setSubmitted] = useState(false);
 
     const { projects, GetAllProject } = useHooksProject();
 
@@ -23,7 +24,8 @@ const EmployeesForm: React.FC<EmployeesFormProps> = ({ initialValues, onSubmit }
 
     useEffect(() => {
         setValues(initialValues);
-    }, [initialValues]);
+        setSubmitted(false);
+    }, [initialValues, submitted]);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setValues({
@@ -37,6 +39,7 @@ const EmployeesForm: React.FC<EmployeesFormProps> = ({ initialValues, onSubmit }
         try {
             await onSubmit(values);
             setMessage('Salvo com sucesso!');
+            setSubmitted(true);
         } catch (error) {
             setMessage('Ocorreu um erro ao salvar.');
         }

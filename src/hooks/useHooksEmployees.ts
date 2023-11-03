@@ -7,7 +7,7 @@ import { ResponseLogin } from '../Models/ResponseLogin';
 import { LoginModel } from '../Models/LoginModel';
 
 export const useHooksEmployees = () => {
-    const [tasks, setTasks] = useState<EmployeesModelsList>([]);
+    const [employeesList, setTasks] = useState<EmployeesModelsList>([]);
 
     const GetAllEmployees = useCallback(async () => {
         const { status, data } = await EmployeesService.GetAllEmployees();
@@ -49,7 +49,7 @@ export const useHooksEmployees = () => {
 
 
     return {
-        tasks,
+        employeesList,
         employees,
         loginResult,
         GetAllEmployees,

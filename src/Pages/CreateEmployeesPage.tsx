@@ -72,7 +72,7 @@ const CreateEmployeesPage: React.FC = () => {
             Criar Funcionário
           </button>
    
-          <button className="buttonCriar" type="submit" onClick={() => navigate('/')}>
+          <button className="buttonCriar" type="submit" onClick={() => navigate('/home')}>
             Voltar
           </button>
 

@@ -13,7 +13,7 @@ const ProjectPage: React.FC = () => {
 
   useEffect(() => {
     GetAllProject();
-  }, [GetAllProject, projects]);
+  }, [GetAllProject]);
 
   return (
     <div className='container'>
@@ -57,7 +57,7 @@ const ProjectPage: React.FC = () => {
         </tbody>
       </table>
       <div>
-        <button className="buttonCriar" type="submit" onClick={() => navigate('/')}>
+        <button className="buttonCriar" type="submit" onClick={() => navigate('/home')}>
           Voltar
         </button>
       </div>
