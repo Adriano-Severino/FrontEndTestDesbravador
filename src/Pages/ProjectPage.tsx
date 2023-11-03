@@ -41,7 +41,7 @@ const ProjectPage: React.FC = () => {
             <td>{StatusProjectEnum[project.statusProjectEnum]}</td>
             <td> {/* Adicione uma célula para os funcionários */}
               {project.employees.map((employee) => (
-                <div key={employee.id}>{employee.nome}</div>
+                <div key={employee.projectId}>{employee.nome}</div>
               ))}
             </td>
               <td>

@@ -23,16 +23,17 @@ const StartPage: React.FC = () => {
             alert('Falha no login: ' + loginResult.message);
         }
     };
-    
-    <div className='container'>
-        <label>
-            Para ter acesso ao admin use o usuario ja cadastrado no sistema que tem as permisão de admin
-            Email:admin@admin.com
-            Senha:123
-        </label>
-    </div>
+
+
     return (
         <div className='container'>
+            <div className='container'>
+                <label className='startTitle'>
+                    <p>Para ter acesso de Administrador use o usuario ja cadastrado no sistema que tem as permisão de Administrador</p>
+                   <p> Email: admin@admin.com</p>
+                   <p> Senha: 123</p>
+                </label>
+            </div>
             <form onSubmit={handleSubmit}>
                 <label className='email'>
                     Email:
@@ -42,7 +43,7 @@ const StartPage: React.FC = () => {
                     Senha:
                     <input placeholder='123' type="password" value={password} onChange={e => setPassword(e.target.value)} required />
                 </label>
-                <button className="buttonCriar" type="submit">Entrar</button>
+                <button className="StartButton" type="submit">Entrar</button>
             </form>
         </div>
     );
